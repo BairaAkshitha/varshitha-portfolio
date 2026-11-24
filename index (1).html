@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Varshitha Baira</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE a confident personal portfolio for a data and AI engineer: rich, atmospheric, precise
+   IDEA a live data pipeline at night: sources glow, records stream through stations, decisions come out the far end
+   PICTURE a full-width animated pipeline in the hero, particles flowing from three sources through Databricks into 49.25M scenarios and out as 10.92M picks
+   COLOUR one night palette in both themes: deep teal #05262b ground, lighter teal panels, warm coral #ff7a59 accent, sand #f6ead8 ink, aqua #5fe0cf support
+   TYPE Sora 700/800 for name, headings and figures + Inter for text
+   LAYOUT name, role and links across the top, pipeline full bleed beneath, stat strip; jobs as a timeline with project cards; phone stacks everything in one column */
+:root{color-scheme:dark;--bg:#05262b;--bg2:#08333a;--panel:#0b3d45;--line:#1d5a62;--ink:#f6ead8;--soft:#b9cfc9;--coral:#ff7a59;--aqua:#5fe0cf}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:76px;scroll-behavior:smooth;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+h1,h2,h3,h4{font-family:Sora,Inter,sans-serif;letter-spacing:-.02em;line-height:1.08;margin:0;text-wrap:balance}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(36px,5vw,80px) max(5vw,16px)}
+nav{position:sticky;top:0;z-index:9;background:rgba(5,38,43,.82);backdrop-filter:blur(10px);border-bottom:1px solid rgba(95,224,207,.15)}
+nav .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px;padding:14px max(5vw,16px)}
+.brand{font-family:Sora,sans-serif;font-weight:800;font-size:18px;text-decoration:none}
+.brand i{font-style:normal;color:var(--coral)}
+.links{display:flex;flex-wrap:wrap;gap:4px 22px}
+.links a{text-decoration:none;color:var(--soft);font-weight:500;padding:8px 0}
+.links a:hover,.links a:focus-visible{color:var(--aqua);outline:none}
+.hero{position:relative;background:radial-gradient(120% 90% at 85% 0%,#0d4a52 0%,var(--bg) 60%)}
+.top{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:28px 56px;align-items:center}
+.hero h1{font-size:clamp(46px,7.4vw,92px);font-weight:800;line-height:.98}
+.hero h1 span{display:block;color:var(--aqua)}
+.role{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 18px}
+.role span{font-size:14px;font-weight:600;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:rgba(11,61,69,.7)}
+.intro{color:var(--soft);font-size:17px;max-width:60ch;margin:0}
+.cta{display:flex;flex-direction:column;gap:12px}
+.btn{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:52px;padding:12px 20px;border-radius:14px;text-decoration:none;font-weight:600;border:1px solid var(--line);background:rgba(11,61,69,.6);transition:transform .2s,border-color .2s}
+.btn:hover,.btn:focus-visible{border-color:var(--aqua);transform:translateY(-2px);outline:none}
+.btn.main{background:var(--coral);border-color:var(--coral);color:#2a0f06}
+.btn.main:hover,.btn.main:focus-visible{border-color:#ffd2c4}
+.btn small{font-weight:400;font-size:13px;opacity:.8;overflow-wrap:anywhere;text-align:right}
+.side{display:flex;flex-direction:column;gap:18px}
+.ai{position:relative;height:clamp(200px,20vw,250px);border:1px solid var(--line);border-radius:22px;background:radial-gradient(90% 90% at 50% 40%,rgba(95,224,207,.14),rgba(8,51,58,.6));overflow:hidden}
+.ai svg{position:absolute;inset:0;width:100%;height:100%}
+.ai svg text{font-family:Sora,sans-serif;font-weight:700;fill:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;color:#2a0f06;background:linear-gradient(90deg,#5fe0cf,#a8f0e6)}
+.chips span:nth-child(even){background:linear-gradient(90deg,#ff7a59,#ffb199)}
+.fig{position:relative;height:clamp(260px,30vw,360px);margin-top:clamp(24px,4vw,48px)}
+.fig svg{position:absolute;inset:0;width:100%;height:100%}
+.fig text{font-family:Sora,sans-serif;fill:var(--ink)}
+.feature{margin-top:36px;border:1px solid var(--line);border-radius:24px;overflow:hidden;background:radial-gradient(100% 120% at 50% 0%,#0d4a52,#06292e 70%)}
+.fhead{padding:28px 28px 0}
+.fhead h3{font-size:clamp(22px,2.6vw,30px)}
+.fhead p{margin:8px 0 0;color:var(--soft)}
+.feature .fig{margin:8px 16px 0}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);background:rgba(5,38,43,.6)}
+.stats div{padding:24px max(2vw,14px);border-right:1px solid var(--line)}
+.stats div:last-child{border-right:0}
+.stats b{display:block;font-family:Sora,sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,44px);line-height:1;color:var(--coral);white-space:nowrap}
+.stats span{display:block;margin-top:8px;color:var(--soft);font-size:14px;line-height:1.35}
+.sec h2{font-size:clamp(32px,4.4vw,52px)}
+.lead{color:var(--soft);margin:12px 0 0;max-width:68ch;font-size:17px}
+.tl{position:relative;margin-top:56px;padding-left:44px}
+.tl::before{content:"";position:absolute;left:11px;top:6px;bottom:0;width:2px;background:linear-gradient(var(--coral),var(--aqua) 60%,transparent)}
+.job{position:relative;margin-bottom:64px}
+.job:last-child{margin-bottom:0}
+.job::before{content:"";position:absolute;left:-44px;top:6px;width:24px;height:24px;border-radius:50%;background:var(--bg);border:5px solid var(--coral);box-shadow:0 0 0 6px rgba(255,122,89,.18)}
+.job.two::before{border-color:var(--aqua);box-shadow:0 0 0 6px rgba(95,224,207,.18)}
+.jobhead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 20px}
+.jobhead h3{font-size:clamp(26px,3.2vw,36px)}
+.when{font-weight:600;color:var(--aqua);white-space:nowrap}
+.sub{color:var(--soft);margin:6px 0 18px;font-size:16px}
+.duty{list-style:none;margin:0 0 26px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.duty li{background:rgba(11,61,69,.55);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:15px;color:var(--soft)}
+.duty b{color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.grid .proj:last-child:nth-child(odd){grid-column:1/-1}
+.proj{position:relative;background:linear-gradient(160deg,#0e4750,#0a363e);border:1px solid var(--line);border-radius:20px;padding:26px;transition:transform .25s,border-color .25s}
+.proj:hover{transform:translateY(-3px);border-color:rgba(95,224,207,.55)}
+.proj .n{font-family:Sora,sans-serif;font-size:13px;font-weight:600;color:var(--aqua)}
+.proj h4{font-size:22px;line-height:1.2;margin:6px 0 14px}
+.figs{display:flex;flex-wrap:wrap;gap:10px 28px;margin:0 0 16px;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.figs div{font-size:13px;color:var(--soft)}
+.figs b{display:block;font-family:Sora,sans-serif;font-size:28px;font-weight:800;color:var(--coral);line-height:1.05}
+.proj ul{margin:0 0 18px;padding:0;list-style:none}
+.proj li{position:relative;padding-left:22px;margin-bottom:9px;font-size:15px;color:#e2d9ca}
+.proj li::before{content:"";position:absolute;left:2px;top:.62em;width:9px;height:9px;border-radius:2px;background:var(--aqua);transform:rotate(45deg)}
+.tags{display:flex;flex-wrap:wrap;gap:7px}
+.tags span{font-size:13px;font-weight:500;padding:4px 11px;border-radius:999px;background:rgba(95,224,207,.1);border:1px solid rgba(95,224,207,.3);color:var(--aqua);white-space:nowrap}
+.skillband{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:34px}
+.sk{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}
+.sk h3{font-size:19px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.sk h3::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--coral);flex:none}
+.honors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:34px}
+.certs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:34px}
+.award{position:relative;display:flex;gap:20px;align-items:center;border-radius:22px;padding:26px;border:1px solid var(--line);background:linear-gradient(150deg,#0f4a53,#0a343c);overflow:hidden}
+.award::after{content:"";position:absolute;right:-60px;top:-60px;width:180px;height:180px;border-radius:50%;background:radial-gradient(rgba(255,255,255,.08),transparent 70%)}
+.award.g{border-color:rgba(242,193,78,.55);background:linear-gradient(150deg,#3a3315,#0a343c 70%)}
+.award.sv{border-color:rgba(201,211,209,.45);background:linear-gradient(150deg,#2b3d3f,#0a343c 70%)}
+.award svg{width:84px;height:96px;flex:none}
+.award .k{font-family:Sora,sans-serif;font-size:13px;font-weight:700;letter-spacing:.02em}
+.award.g .k{color:#f2c14e}.award.sv .k{color:#dfe7e5}.award.c .k{color:var(--aqua)}
+.award h3{font-size:21px;line-height:1.2;margin:6px 0 6px}
+.award p{margin:0;color:var(--soft);font-size:15px}
+.edu{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px 32px;align-items:center;margin-top:34px;border-radius:22px;padding:28px;border:1px solid var(--line);background:var(--panel)}
+.edu h3{font-size:22px}
+.edu p{margin:6px 0 0;color:var(--soft)}
+.hon{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px}
+.hon h3{font-size:20px;margin-bottom:14px}
+.hon ul{margin:0;padding:0;list-style:none}
+.hon li{padding:10px 0;border-top:1px solid var(--line);color:#e2d9ca}
+.hon li:first-child{border-top:0;padding-top:0}
+.hon li b{color:var(--ink)}
+.medal{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:8px;vertical-align:middle}
+.gold{background:#f2c14e}.silver{background:#c9d3d1}
+.gpa{font-family:Sora,sans-serif;font-weight:800;font-size:clamp(40px,5vw,56px);color:var(--coral);line-height:1;margin:6px 0 10px}
+footer{background:var(--coral);color:#2a0f06}
+footer .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px 56px;align-items:center}
+footer h2{font-size:clamp(32px,4.6vw,56px);font-weight:800}
+footer p{margin:14px 0 0;font-size:17px}
+footer .btn{background:rgba(255,255,255,.25);border-color:rgba(42,15,6,.25);color:#2a0f06}
+footer .btn.main{background:#2a0f06;border-color:#2a0f06;color:var(--ink)}
+footer .btn:hover,footer .btn:focus-visible{border-color:#2a0f06}
+.fine{font-size:13px;margin-top:32px;opacity:.75}
+@media(max-width:980px){.skills{grid-template-columns:repeat(2,minmax(0,1fr))}.honors{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:820px){.top,footer .wrap{grid-template-columns:minmax(0,1fr)}.grid,.duty{grid-template-columns:minmax(0,1fr)}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stats div:nth-child(2){border-right:0}.stats div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media(max-width:600px){.links{display:none}.skills,.honors,.certs{grid-template-columns:minmax(0,1fr)}.edu{grid-template-columns:minmax(0,1fr)}.award{padding:20px}.award svg{width:64px;height:74px}.tl{padding-left:34px}.job::before{left:-34px;width:20px;height:20px;border-width:4px}.tl::before{left:9px}.proj{padding:20px}.fig{height:420px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.proj{transition:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="#top">Varshitha<i>.</i></a>
+  <div class="links">
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#honors">Achievements</a>
+    <a href="#certs">Certifications</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div></nav>
+
+<header class="band hero" id="top"><div class="wrap">
+  <div class="top">
+    <div>
+      <h1>Varshitha <span>Baira</span></h1>
+      <div class="role"><span>Data Engineer</span><span>AI Engineer</span><span>ML Engineer</span></div>
+      <p class="intro">I build data pipelines that turn raw sources into decisions on Databricks, Delta Lake and AWS, with data quality and reconciliation at every step. I also build GenAI and ML apps: RAG assistants, LangChain agents and real-time computer vision. Based in Hyderabad, India.</p>
+    </div>
+    <div class="side">
+    <div class="ai" role="img" aria-label="Animated neural network feeding into LLMs, RAG, agents and computer vision"><svg id="nn"></svg></div>
+    <div class="chips"><span>LLMs</span><span>RAG</span><span>LangChain agents</span><span>Computer vision</span></div>
+    <div class="cta">
+      <a class="btn main" href="https://drive.google.com/file/d/1dy51C_1daoeI2erLvu77lANTRU41HqM4/view?usp=sharing" target="_blank" rel="noopener">View my resume <small>PDF</small></a>
+      <a class="btn" href="https://www.linkedin.com/in/varshitha-baira-3ab777254" target="_blank" rel="noopener">LinkedIn <small>varshitha-baira</small></a>
+      <a class="btn" href="mailto:varshithabaira02@gmail.com">Email <small>varshithabaira02@gmail.com</small></a>
+    </div>
+    </div>
+  </div>
+</div></header>
+
+
+<main>
+<section class="band sec" id="experience"><div class="wrap">
+  <h2>Experience</h2>
+  <p class="lead">Nearly two years building production data pipelines and retail analytics, plus a full data science program with four end-to-end AI and ML projects.</p>
+  <div class="feature">
+    <div class="fhead"><h3>Featured pipeline: retail markdown optimization</h3><p>One run at Bunny Innovations, from raw sources to pricing decisions.</p></div>
+  <div class="fig" role="img" aria-label="Animated pipeline: databases, APIs and S3 flow into Databricks, become 49.25M demand scenarios, and come out as 10.92M markdown recommendations on dashboards"><svg id="pipe"></svg></div>
+    <div class="stats">
+  <div><b>49.25M</b><span>demand scenarios processed per pipeline run</span></div>
+  <div><b>10.92M</b><span>markdown recommendations per run</span></div>
+  <div><b>40 SKUs</b><span>analysed for cannibalization and halo effects</span></div>
+  <div><b>4</b><span>end-to-end AI and ML projects built</span></div>
+</div>
+  </div>
+  <div class="tl">
+    <article class="job">
+      <div class="jobhead"><h3>Bunny Innovations</h3><span class="when">January 2025 – Present</span></div>
+      <p class="sub">Data Engineer · Hyderabad, India</p>
+      <ul class="duty">
+        <li>Build <b>ETL/ELT pipelines</b> with <b>Python, SQL and Databricks</b> that load data from databases, REST APIs and AWS S3 into <b>Delta Lake</b>, with run parameters, task dependencies and audit logging.</li>
+        <li>Implement <b>full and incremental loads</b>, so each run processes only new or changed records, with a full-reload option for backfills.</li>
+        <li>Add <b>data quality checks</b> (schema, duplicates, nulls) and <b>source-to-target reconciliation</b>, tracing failures to root cause so reports run on validated data.</li>
+        <li>Work with analytics and business teams on <b>pricing scenario validation</b> and API documentation for client handover.</li>
+      </ul>
+      <div class="grid" id="bunny"></div>
+    </article>
+    <article class="job two">
+      <div class="jobhead"><h3>Innomatics Research Labs</h3><span class="when">2024 – 2025</span></div>
+      <p class="sub">Data Science Trainee (Data Science Program) · Hyderabad, India</p>
+      <ul class="duty">
+        <li>Completed a hands-on <b>Data Science program</b> covering Python, SQL, statistics, machine learning, deep learning (CNN, RNN, LSTM) and <b>Generative AI</b>.</li>
+        <li>Performed <b>exploratory data analysis</b> with Pandas, NumPy, Matplotlib and Seaborn, and trained supervised models with hyperparameter tuning and evaluation metrics.</li>
+      </ul>
+      <div class="grid" id="inno"></div>
+    </article>
+  </div>
+</div></section>
+
+<section class="band sec skillband" id="skills"><div class="wrap">
+  <h2>Skills</h2>
+  <p class="lead">The tools and methods behind the work above.</p>
+  <div class="skills" id="sk"></div>
+</div></section>
+
+<section class="band sec" id="honors"><div class="wrap">
+  <h2>Achievements</h2>
+  <p class="lead">Badges earned through assessed programs in data science and Python.</p>
+  <div class="honors">
+    <div class="award g"><svg viewBox="0 0 84 96" aria-hidden="true"><path d="M24 2h14l8 30H32z" fill="#ff7a59"/><path d="M60 2H46l-8 30h14z" fill="#e2603f"/><circle cx="42" cy="58" r="34" fill="#c99a2e"/><circle cx="42" cy="58" r="28" fill="#f2c14e"/><circle cx="42" cy="58" r="28" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="2" stroke-dasharray="3 4"/><path d="M42 42l5 10 11 1.6-8 7.8 1.9 11L42 67.2l-9.9 5.2 1.9-11-8-7.8 11-1.6z" fill="#fff" fill-opacity=".9"/><text x="42" y="92" text-anchor="middle" font-family="Sora" font-size="0">gold</text></svg><div><div class="k">Gold Badge · NASSCOM</div><h3>Advanced Data Science with Python</h3><p>Awarded by NASSCOM, India's national IT industry body.</p></div></div>
+    <div class="award sv"><svg viewBox="0 0 84 96" aria-hidden="true"><path d="M24 2h14l8 30H32z" fill="#ff7a59"/><path d="M60 2H46l-8 30h14z" fill="#e2603f"/><circle cx="42" cy="58" r="34" fill="#9fb0ad"/><circle cx="42" cy="58" r="28" fill="#d7dfdd"/><circle cx="42" cy="58" r="28" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="2" stroke-dasharray="3 4"/><path d="M42 42l5 10 11 1.6-8 7.8 1.9 11L42 67.2l-9.9 5.2 1.9-11-8-7.8 11-1.6z" fill="#fff" fill-opacity=".9"/><text x="42" y="92" text-anchor="middle" font-family="Sora" font-size="0">silver</text></svg><div><div class="k">Silver Badge · Innomatics</div><h3>Python Programming</h3><p>Innomatics Research Labs, Hyderabad.</p></div></div>
+    <div class="award sv"><svg viewBox="0 0 84 96" aria-hidden="true"><path d="M24 2h14l8 30H32z" fill="#ff7a59"/><path d="M60 2H46l-8 30h14z" fill="#e2603f"/><circle cx="42" cy="58" r="34" fill="#9fb0ad"/><circle cx="42" cy="58" r="28" fill="#d7dfdd"/><circle cx="42" cy="58" r="28" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="2" stroke-dasharray="3 4"/><path d="M42 42l5 10 11 1.6-8 7.8 1.9 11L42 67.2l-9.9 5.2 1.9-11-8-7.8 11-1.6z" fill="#fff" fill-opacity=".9"/><text x="42" y="92" text-anchor="middle" font-family="Sora" font-size="0">silver</text></svg><div><div class="k">Silver Badge · Innomatics</div><h3>Exploratory Data Analysis</h3><p>Innomatics Research Labs, Hyderabad.</p></div></div>
+  </div>
+</div></section>
+
+<section class="band sec skillband" id="certs"><div class="wrap">
+  <h2>Certifications</h2>
+  <p class="lead">Industry certifications in cloud AI and problem solving.</p>
+  <div class="certs">
+    <div class="award c"><svg viewBox="0 0 84 96" aria-hidden="true"><path d="M42 4l36 20v48L42 92 6 72V24z" fill="#5fe0cf" fill-opacity=".18" stroke="#5fe0cf" stroke-width="3"/><path d="M42 16l26 14.5v35L42 80 16 65.5v-35z" fill="#5fe0cf"/><text x="42" y="54" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="17" fill="#05262b">AI</text></svg><div><div class="k">Amazon Web Services</div><h3>AWS Certified AI Practitioner</h3><p>AI and ML concepts, generative AI, and responsible AI on AWS.</p></div></div>
+    <div class="award c"><svg viewBox="0 0 84 96" aria-hidden="true"><path d="M42 4l36 20v48L42 92 6 72V24z" fill="#ff7a59" fill-opacity=".18" stroke="#ff7a59" stroke-width="3"/><path d="M42 16l26 14.5v35L42 80 16 65.5v-35z" fill="#ff7a59"/><text x="42" y="54" text-anchor="middle" font-family="Sora,sans-serif" font-weight="800" font-size="17" fill="#05262b">&lt;/&gt;</text></svg><div><div class="k">HackerRank</div><h3>Problem Solving</h3><p>Certified in data structures and algorithmic problem solving.</p></div></div>
+  </div>
+</div></section>
+
+<section class="band sec" id="education"><div class="wrap">
+  <h2>Education</h2>
+  <div class="edu">
+    <div><h3>Bachelor of Science in Maths, Statistics, Computer Science</h3><p>Alphores Women's Degree College (Satavahana University), Karimnagar, Telangana</p></div>
+    <div class="gpa">8.84<small style="font-size:.45em;color:var(--soft)"> / 10 CGPA</small></div>
+  </div>
+</div></section>
+</main>
+
+<footer class="band" id="contact"><div class="wrap">
+  <div>
+    <h2>Let's build something with data.</h2>
+    <p>Open to Data Engineer, AI Engineer and ML Engineer roles. Email or LinkedIn is the quickest way to reach me.</p>
+  </div>
+  <div class="cta">
+    <a class="btn main" href="mailto:varshithabaira02@gmail.com">Email <small>varshithabaira02@gmail.com</small></a>
+    <a class="btn" href="https://www.linkedin.com/in/varshitha-baira-3ab777254" target="_blank" rel="noopener">LinkedIn <small>varshitha-baira-3ab777254</small></a>
+    <a class="btn" href="https://drive.google.com/file/d/1dy51C_1daoeI2erLvu77lANTRU41HqM4/view?usp=sharing" target="_blank" rel="noopener">Download resume</a>
+  </div>
+</div>
+<div class="wrap"><p class="fine">© 2026 Varshitha Baira · Hyderabad, India</p></div>
+</footer>
+
+<script>
+{
+const bunny=[
+ {t:"Retail Price Elasticity & Markdown Optimization",f:[["49.25M","scenarios per run"],["10.92M","recommendations per run"]],
+  p:["Built Databricks workflows that use product-level price elasticity to simulate how demand changes at different discount levels, across products and stores.",
+     "Implemented a markdown rules engine that filters scenarios by discount limits, eligibility and confidence thresholds, ranks them against revenue and quantity objectives, and attaches a reason code to every recommendation.",
+     "Added reconciliation checks at each stage to confirm no records were lost or duplicated between 49.25M scenarios and 10.92M recommendations.",
+     "Built a materialized reporting layer on validated Delta tables with automated refresh, so pricing dashboards load fast."],
+  k:["Databricks","Delta Lake","SQL","Python"]},
+ {t:"Retail Cannibalization & Halo Impact Analysis",f:[["40","SKUs"],["20","brands"],["5","stores"]],
+  p:["Measured whether discounting one product took sales from similar products (cannibalization) or lifted related products (halo effect), using cross-price elasticity and OLS regression on 180 days of sales history.",
+     "Compared sales before and during each promotion and applied Difference-in-Differences against non-promoted products to separate the discount effect from seasonal trends.",
+     "Validated results with a Random Forest counterfactual model that predicted sales without the discount.",
+     "Showed which promotions grew total category sales and which only shifted sales between products."],
+  k:["Python","OLS regression","Difference-in-Differences","Random Forest"]},
+ {t:"VIDIS — Real-Time Surveillance Event Platform",f:[],
+  p:["Supported a Python/FastAPI backend that receives intrusion alarms from Cyclope thermal surveillance software over TCP/XML and parses bearing, coordinates, alarm state and zone.",
+     "Worked on the PostgreSQL data model (cameras, alarms, events, calibration points, PTZ commands, zones, logs) linking each detection to the resulting event and camera action.",
+     "Worked on coordinate mapping that converts a thermal detection into pan/tilt/zoom values, so ONVIF PTZ cameras turn automatically toward the target (Slew-to-Cue).",
+     "Supported WebSocket notifications that push alarms to the operator dashboard in real time, plus integration checks, diagnostic logging and API documentation."],
+  k:["Python","FastAPI","PostgreSQL","WebSockets","ONVIF","TCP/XML"]}
+];
+const inno=[
+ {t:"AI Job Application Agent",f:[],
+  p:["Built a multi-agent system with LangChain that automates the job search: finding postings, analyzing them against a profile, and submitting applications.",
+     "Fetched and filtered postings with the Google Custom Search API and BeautifulSoup, and matched them to a resume to shortlist relevant roles.",
+     "Automated form filling and submission with Playwright, with JSON reports and n8n email notifications for every application.",
+     "Runs on demand or on a schedule (cron) in the background."],
+  k:["LangChain","Google Custom Search API","Playwright","BeautifulSoup","n8n"]},
+ {t:"Multimodal Knowledge Assistant (RAG)",f:[],
+  p:["Built an assistant that answers questions about, and summarizes, PDFs and audio files using Retrieval-Augmented Generation.",
+     "Implemented LangChain pipelines for document parsing, audio transcription and semantic retrieval from a Chroma vector store, with Google Gemini generating answers.",
+     "Real-time chat with source-cited responses, so every answer can be checked against the original."],
+  k:["LangChain","ChromaDB","Google Gemini","RAG"]},
+ {t:"Face Recognition Attendance System",f:[["78","facial landmarks"]],
+  p:["Built a real-time attendance system that detects 78 facial landmarks with MediaPipe from a live OpenCV camera feed.",
+     "Normalized landmarks by subtracting the nose position and scaling by eye distance, then trained a Random Forest classifier.",
+     "Face-based registration, login and logout, logging time and status to CSV, with automatic retraining after each new registration."],
+  k:["OpenCV","MediaPipe","Random Forest","Python"]},
+ {t:"Real-Time Hand Gesture to Text Converter",f:[["21","hand landmarks"]],
+  p:["Built a gesture recognition system that tracks 21 hand landmarks with MediaPipe and converts gestures to text with a Random Forest classifier.",
+     "Landmark normalization keeps recognition consistent across hand sizes and positions; command gestures handle start, stop, delete and space for hands-free typing.",
+     "Integrated text-to-speech (pyttsx3) to read typed text aloud."],
+  k:["OpenCV","MediaPipe","Random Forest","pyttsx3"]}
+];
+const skills=[
+ ["Programming",["Python","SQL","PySpark","Spark SQL"]],
+ ["Data engineering",["Databricks","Delta Lake","PostgreSQL","AWS S3","AWS Glue","dbt","ETL/ELT","Incremental loads","Reconciliation"]],
+ ["Machine learning",["Classification","Regression","Random Forest","Scikit-learn","Feature engineering","Difference-in-Differences"]],
+ ["GenAI and deep learning",["LLMs","RAG","LangChain","LangGraph","Multi-agent systems","Prompt engineering","ChromaDB","CNN","LSTM"]],
+ ["Computer vision and speech",["OpenCV","MediaPipe","Landmark detection","Speech-to-text","Text-to-speech"]],
+ ["Analysis and APIs",["Pandas","NumPy","Matplotlib","Seaborn","EDA","FastAPI","REST APIs","WebSockets","Git"]]
+];
+const card=(x,i)=>`<div class="proj"><div class="n">Project ${i+1}</div><h4>${x.t}</h4>${x.f.length?`<div class="figs">${x.f.map(([n,l])=>`<div><b>${n}</b>${l}</div>`).join('')}</div>`:''}<ul>${x.p.map(v=>`<li>${v}</li>`).join('')}</ul><div class="tags">${x.k.map(k=>`<span>${k}</span>`).join('')}</div></div>`;
+document.getElementById('bunny').innerHTML=bunny.map(card).join('');
+document.getElementById('inno').innerHTML=inno.map(card).join('');
+document.getElementById('sk').innerHTML=skills.map(([h,l])=>`<div class="sk"><h3>${h}</h3><div class="tags">${l.map(k=>`<span>${k}</span>`).join('')}</div></div>`).join('');
+
+const s=document.getElementById('pipe');
+const still=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const draw=()=>{
+  const W=s.clientWidth,H=s.clientHeight;if(!W||!H)return;
+  const v=W<600;
+  let src,hub,mid,out,dash;
+  if(!v){
+    const y=H*0.5;
+    src=[[W*0.06,H*0.2],[W*0.06,y],[W*0.06,H*0.8]];
+    hub=[W*0.3,y];mid=[W*0.54,y];out=[W*0.76,y];dash=[W*0.93,y];
+  }else{
+    src=[[W*0.18,H*0.12],[W*0.5,H*0.12],[W*0.82,H*0.12]];
+    hub=[W*0.5,H*0.32];mid=[W*0.5,H*0.54];out=[W*0.5,H*0.74];dash=[W*0.5,H*0.92];
+  }
+  const curve=(a,b)=>v?`M${a[0]},${a[1]} C${a[0]},${(a[1]+b[1])/2} ${b[0]},${(a[1]+b[1])/2} ${b[0]},${b[1]}`:`M${a[0]},${a[1]} C${(a[0]+b[0])/2},${a[1]} ${(a[0]+b[0])/2},${b[1]} ${b[0]},${b[1]}`;
+  const paths=[...src.map(p=>curve(p,hub)),curve(hub,mid),curve(mid,out),curve(out,dash)];
+  const srcLab=["Databases","REST APIs","AWS S3"];
+  const r1=Math.min(W,H)*(v?0.085:0.11),r2=r1*0.78;
+  let g=`<defs><radialGradient id="gl"><stop offset="0" stop-color="#ff7a59" stop-opacity=".55"/><stop offset="1" stop-color="#ff7a59" stop-opacity="0"/></radialGradient><radialGradient id="ga"><stop offset="0" stop-color="#5fe0cf" stop-opacity=".45"/><stop offset="1" stop-color="#5fe0cf" stop-opacity="0"/></radialGradient></defs>`;
+  g+=paths.map((d,i)=>`<path id="p${i}" d="${d}" fill="none" stroke="#1d5a62" stroke-width="${i<3?3:6}" stroke-linecap="round"/><path d="${d}" fill="none" stroke="${i<3?'#5fe0cf':'#ff7a59'}" stroke-opacity=".5" stroke-width="${i<3?1.5:2.5}" stroke-dasharray="2 10" stroke-linecap="round"/>`).join('');
+  if(!still){
+    for(let i=0;i<paths.length;i++){
+      const n=i<3?3:5;
+      for(let k=0;k<n;k++)g+=`<circle r="${i<3?3.5:4.5}" fill="${i<3?'#5fe0cf':'#ffd2c4'}"><animateMotion dur="${i<3?2.6:2.2}s" begin="${(-k*(i<3?2.6:2.2)/n).toFixed(2)}s" repeatCount="indefinite"><mpath href="#p${i}"/></animateMotion></circle>`;
+    }
+  }
+  src.forEach((p,i)=>{g+=`<circle cx="${p[0]}" cy="${p[1]}" r="${r2*0.55}" fill="url(#ga)"/><circle cx="${p[0]}" cy="${p[1]}" r="${r2*0.32}" fill="#0b3d45" stroke="#5fe0cf" stroke-width="2"/>`;
+    g+=v?`<text x="${p[0]}" y="${p[1]-r2*0.32-10}" text-anchor="middle" font-size="12" font-weight="600">${srcLab[i]}</text>`:`<text x="${p[0]+r2*0.32+10}" y="${p[1]-r2*0.32-6}" font-size="14" font-weight="600">${srcLab[i]}</text>`;});
+  const node=(p,r,big,small,c)=>`<circle cx="${p[0]}" cy="${p[1]}" r="${r*1.7}" fill="url(#${c=='#ff7a59'?'gl':'ga'})"/><circle cx="${p[0]}" cy="${p[1]}" r="${r}" fill="#08333a" stroke="${c}" stroke-width="3"/><text x="${p[0]}" y="${p[1]+(small?-2:6)}" text-anchor="middle" font-size="${Math.max(12,Math.min(r*0.34,(2*r-14)/big.length*1.7))}" font-weight="800">${big}</text>${small?`<text x="${p[0]}" y="${p[1]+r*0.38}" text-anchor="middle" font-size="${Math.max(11,r*0.2)}" fill-opacity=".8" style="fill:#b9cfc9">${small}</text>`:''}`;
+  g+=node(hub,r1,"Databricks","Delta Lake","#5fe0cf");
+  g+=node(mid,r1,"49.25M","scenarios","#ff7a59");
+  g+=node(out,r1*0.82,"10.92M","picks","#ff7a59");
+  g+=`<g transform="translate(${dash[0]-r2*0.7},${dash[1]-r2*0.55})"><rect width="${r2*1.4}" height="${r2*1.1}" rx="8" fill="#08333a" stroke="#f6ead8" stroke-width="2"/>${[0.3,0.55,0.8].map((f,i)=>`<rect x="${r2*1.4*(0.18+i*0.25)}" y="${r2*1.1*(0.85-[0.35,0.6,0.45][i])}" width="${r2*0.22}" height="${r2*1.1*[0.35,0.6,0.45][i]}" rx="2" fill="${i==1?'#ff7a59':'#5fe0cf'}"/>`).join('')}</g>`;
+  g+=v?`<text x="${dash[0]+r2*0.7+10}" y="${dash[1]+5}" font-size="12" font-weight="600">Dashboards</text>`:`<text x="${dash[0]}" y="${dash[1]+r2*0.55+22}" text-anchor="middle" font-size="14" font-weight="600">Pricing dashboards</text>`;
+  s.innerHTML=g;
+};
+const ro=new ResizeObserver(draw);ro.observe(s);
+const n=document.getElementById('nn');
+const drawNN=()=>{
+  const W=n.clientWidth,H=n.clientHeight;if(!W||!H)return;
+  const layers=[3,5,5,4],outs=["LLM","RAG","Agent","Vision"];
+  const xs=layers.map((_,i)=>W*(0.1+i*0.24));
+  const pts=layers.map((c,i)=>Array.from({length:c},(_,j)=>[xs[i],H*(0.5+(j-(c-1)/2)*(0.78/Math.max(c,4)))]));
+  let g='<defs><radialGradient id="nglow"><stop offset="0" stop-color="#5fe0cf" stop-opacity=".6"/><stop offset="1" stop-color="#5fe0cf" stop-opacity="0"/></radialGradient></defs>';
+  let k=0;
+  for(let i=0;i<pts.length-1;i++)for(const a of pts[i])for(const b of pts[i+1]){
+    const id='e'+(k++);
+    g+=`<path id="${id}" d="M${a[0]},${a[1]} L${b[0]},${b[1]}" stroke="#5fe0cf" stroke-opacity=".18" stroke-width="1"/>`;
+    if(!still&&k%3==0)g+=`<circle r="2.6" fill="${i==2?'#ff7a59':'#a8f0e6'}"><animateMotion dur="${1.6+(k%5)*0.35}s" begin="${-(k%7)*0.4}s" repeatCount="indefinite"><mpath href="#${id}"/></animateMotion></circle>`;
+  }
+  pts.forEach((L,i)=>L.forEach((p,j)=>{
+    const last=i==pts.length-1,r=last?7:5;
+    g+=`<circle cx="${p[0]}" cy="${p[1]}" r="${r*3}" fill="url(#nglow)"/><circle cx="${p[0]}" cy="${p[1]}" r="${r}" fill="${last?'#ff7a59':'#5fe0cf'}"/>`;
+    if(last)g+=`<text x="${p[0]+14}" y="${p[1]+4}" font-size="13">${outs[j]}</text>`;
+  }));
+  n.innerHTML=g;
+};
+const ro2=new ResizeObserver(drawNN);ro2.observe(n);
+}
+</script>
+</body>
+</html>
